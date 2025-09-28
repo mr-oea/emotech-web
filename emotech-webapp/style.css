@@ -1,0 +1,149 @@
+ /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estructura base */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Ocultar checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilo botón hamburguesa */
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: block;
+}
+
+/* Menú oculto por defecto */
+nav {
+  display: none;
+  flex-direction: column;
+  background: #333;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 200px;
+}
+
+nav a {
+  padding: 1rem;
+  border-bottom: 1px solid #444;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Mostrar menú cuando el checkbox está activado */
+#menu-toggle:checked + .menu-icon + nav {
+  display: flex;
+}
+
+/* Pantallas grandes */
+@media (min-width: 1000px) {
+  .menu-icon {
+    display: none;
+  }
+  nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+  }
+  nav a {
+    border: none;
+    margin: 0 1rem;
+  }
+}
+
+/* Hero */
+.hero {
+  background: #f4f4f4;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+}
+
+/* Icons Section */
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.icon-card {
+  background: #eee;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+
+  /* ✅ Control de texto con ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;   /* el texto queda en una sola línea */
+}
+
+/* Footer fijo al fondo (flexbox) */
+main {
+  flex: 1;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
